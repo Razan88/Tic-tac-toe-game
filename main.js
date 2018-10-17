@@ -1,72 +1,81 @@
 $(document).ready(function () {
-    // function startNewGame() {
-    // 	score = {
-    // 		"X": 0,
-    // 		"O": 0
-    // 	};
-    // 	moves = 0;
-    // 	turn = "X";
-    // 	boxes.forEach(function (square) {
-    // 		square.innerHTML = EMPTY;
-    // 	});
-    // }
-    // var player ='X';
-    /* var player1 = "X";
-    var player2 = "O"; */
-    var wins = [
-        [1, 2, 3],
-        [4, 5, 6],
-        [7, 8, 9],
-        [1, 4, 7],
-        [1, 4, 7],
-        [2, 5, 8],
-        [3, 6, 9],
-        [3, 5, 7],
-        [7, 8, 9]
-    ];
+  var wins = ["123", "456", "789", "147", "258", "369", "357", "159"];
+  var newCounter = 0;
+  var i = 1;
+  var oArr = [];
+  var xArr = [];
+  var current;
+  var isGameOver = false;
+  var cells = $("td").length;
 
-    var counter = 1;
-    var i = 1;
-    var oArr = [];
-    var xArr = [];
 
-    $(".sqr").click(function () {
+  $(".sqr").click(function () {
+    console.log('click');
+    if (isGameOver === false) {
+      if (i % 2 === 0) {
+        $(this).text("O").addClass("sqrO");
+        i = 1;
+        current = 'O';
+        oArr += $(this).attr("id");
+        window.setTimeout(function () {
+          newCounter++;
+          checkWinCondition(oArr);
+        }, 100);
+      }
 
-        while ($(this).text() === '') {
-            if (i % 2 === 0) {
-                $(this).text("O").css("color","white");
-                i = 1;
-                oArr.push($(this).attr("id"));
-                //console.log(oArr);
+      else {
+        // console.log($(this).attr("id"));
+        $(this).text("X").addClass("sqrX");
+        i = 0;
+        current = 'X';
+        xArr += $(this).attr("id");
+        window.setTimeout(function () {
+          newCounter++;
+          checkWinCondition(xArr);
+        }, 100);
+      }
+    }
+  });
 
-                console.log($(this).text());
-            } else {
-                $(this).text("X").css("color","yellow");;
-                i = 0;
-                xArr.push($(this).attr("id"));
-                //console.log(xArr);
-            }
-        }
-        $(".button").click(function(){
-            location.reload();
+  function checkWinCondition(playerArr) {
+    playerArr = playerArr.split("").sort().join("");
+
+    if (newCounter === 9) {
+      swal("nobody wins");
+    }
+
+    for (var j = 0; j < wins.length; j++) {
+      if (playerArr.includes(wins[j][0]) && playerArr.includes(wins[j][1]) && playerArr.includes(wins[j][2])) {
+        // alert(current + " is the winner ");
+        swal({
+          // title: "Good job!",
+          // text: current + " is the winner",
+          // icon: "success"
+          position: 'top-end',
+          type: 'success',
+          title: "congratulation",
+          text: current + " is the winner",
+          showConfirmButton: false,
+          timer: 1500
         });
-
-        // function checkWinner(arr) {
-        //     if (xArr.length > 4 ){
-        //         console.log("you");
-        //     }
-
-            // for (var i = 0; i < wins.length; i++) {
-            //     if (wins[i] === 'X') {
-            //         console.log("x wins");
-
-        //         }
-
-            
-        
-        //  checkWinner(xArr);
-
-    });
+        isGameOver = true;
+      }
+    }
+    // var newCounter = 0;
+    // for (var g = 0; g < 9; g++) {
+    //   if ($(".sqr").eq(g).text() !== '') {
+    //     // debugger;
+    //     newCounter++;
+    //   }
+    // }
+    console.log('newCounter is ', newCounter);
 
 
-})
+  }
+
+
+  $(".button").click(function () {
+    location.reload();
+  });
+});
+

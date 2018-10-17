@@ -1,59 +1,155 @@
 body {
-    margin: 0px;
-    margin-top: 120px;
-    background-color: black;
-    text-align: center;
-    
-}
-
-h1{
-    text-shadow: 2px 2px 5px pink;
-  color: pink;
-  font-family: 'Mr Dafoe', cursive;
+  margin: 0px;
+  margin-top: 120px;
+  background-color: black;
   text-align: center;
+}
+
+#start {
+  /* position: absolute;
+  top: 20%;
+  left: 35%;
+  letter-spacing: 6px; */
+  font-size: 80px;
+  color: #fff;
+  text-align: center;
+  -webkit-animation: glow 5s ease-in-out infinite alternate;
+  -moz-animation: glow 5s ease-in-out infinite alternate;
+  animation: glow 5s ease-in-out infinite alternate;
+}
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073,
+      0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6,
+      0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}
+.link {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  padding-top: 30px;
+  transform: translate(-50%, -50%);
+  width: 250px;
+  height: 60px;
+  background: rgb(15, 2, 46);
+  text-decoration: none;
+  border-radius: 30%;
+  color: rgb(255, 255, 255);
+  letter-spacing: 6px;
+  overflow: hidden;
+}
+.link:hover {
+  color: #fff;
+  box-shadow: -35px 0 900px rgb(228, 150, 201),
+    -35px 0 900px rgba(142, 20, 255, 1);
+}
+.link:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 80px;
+  border-radius: 50%;
+  filter: blur(3px);
+  background-color: rgba(022, 20, 152, 0);
+  transition: 2s;
+  z-index: -1;
+}
+.link:hover:before {
+  background: rgba(228, 20, 152, 1);
+  transform: scaleX(10);
+}
+.link:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 80px;
+  border-radius: 50%;
+  filter: blur(3px);
+  background-color: rgba(120, 67, 189, 0);
+  transition: 2s;
+  z-index: -1;
+  mix-blend-mode: lighten;
+}
+.link:hover:after {
+  background: rgba(142, 20, 255, 1);
+  transform: scaleX(10);
+}
+h1 {
+  color: #fff;
+  font-family: Monoton;
+}
+
+td {
+  border: 14px dotted rgba(191,191,191,0.26);
+border-radius: 40px;
+  /* border: 14px dotted rgba(255,0,136,0.26);
+  border-radius: 40px; */
+  /* border: 4px dotted pink ; */
+    height: 150px;
+  width: 150px;
+  cursor: pointer;
   
 }
 
-td{
-    border: 4px dotted pink;
-    height: 100px;
-    width: 100px;
-    cursor: pointer;
-  
- }
- 
- table tr:first-child td{
-    border-top: 0;
- }
- 
- table tr:last-child td{
-    border-bottom: 0;
- }
- 
- table tr td:first-child {
-    border-left: 0;
- }
- 
- table tr td:last-child {
-    border-right: 0;
- }
- table{
-    border-collapse: collapse;
-    position: absolute;
-    top: 200px;
-    left: 50%;
-    margin-left: -170px;
- 
- }
- .button{
-    margin-top: 40px;
-    font-size: 20px;
-    background-color: lightpink;
-    padding: 10px;
-    position: absolute;
-    bottom: 150px;
-    right : 46%;
-    margin-left: -170px;
-    text-shadow: 5px 5px 15px ;
+.swal-text {
+  padding: 17px;
+  /* border: 2px solid yellow; */
+  display: block;
+  margin: 22px;
+  text-align: center;
 
- }
+}
+table tr:first-child td {
+  border-top: 0;
+}
+
+table tr:last-child td {
+  border-bottom: 0;
+}
+
+table tr td:first-child {
+  border-left: 0;
+}
+
+table tr td:last-child {
+  border-right: 0;
+}
+table {
+  border-collapse: collapse;
+  position: relative;
+  top: 30px;
+  left: 45%;
+  margin-left: -170px;
+  
+}
+.button {
+  font-size: 20px;
+  background-color: pink;
+  padding: 10px;
+  position: relative;
+  bottom: 0px;
+  top: 80px;
+  right:20px;
+  text-shadow: 10px 20px 15px;
+  text-shadow: 0 0 1px rgba(14, 14, 9, 0.918), 0 0 0px #00e6db, 0 0 20px #ad00e6, 0 0 30px rgba(240, 217, 7, 0.918), 0 0 40px rgba(192, 93, 27, 0), 0 0 50px #eba102;
+}
+
+.sqrX {
+  color: black;
+  text-shadow: 0 0 1px #000, 0 0 10px #c000e6, 0 0 20px #ad00e6, 0 0 30px #7b00e6, 0 0 40px #3a00e6, 0 0 50px #2b00ff;
+  font-size: 60px;
+}
+
+.sqrO {
+  color: black;
+  text-shadow: 0 0 1px #000, 0 0 10px #00d8d5, 0 0 20px #01e4e0, 0 0 30px #02f9f5, 0 0 40px #00d868, 0 0 50px #2bff00;
+  font-size: 60px;
+}
