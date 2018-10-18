@@ -3,26 +3,24 @@ It's a simple Tic-Tac-Toe game for two players. Each player takes turns placing 
 
 ![screenshot ](icon_0_small.png)
 
-### My Game Project Pages:
-https://github.com/Razan88/Tic-tac-toe-game.git
-
-
-### Challenges:
-How to build a game from scratch.
-
-### Approuch 
- 1- write the html code
- 
- 2- write the js code 
- 
- 3-write the css code
- 
-
 ### Built With:
 * html
 * CSS
 * JavaScrpit
 * JQuery
-  
-###
 
+### Challenges:
+How to build a game from scratch.
+
+### Approuch 
+ 1. html : has a table and button
+ 2. javaScript: declare variables, checkWinner & switchPlayer function 
+ 3. CSS: styling 
+
+### My Game Project Pages:
+[Razan's Tic-Tac-Toe Game](https://razan88.github.io/Tic-tac-toe-game/)
+
+### Credit
+* [Animate.css](https://daneden.github.io/animate.css/)
+* [SweetAlet2](https://sweetalert2.github.io/#download)
+* [w3schools](https://www.w3schools.com/jquery/)
