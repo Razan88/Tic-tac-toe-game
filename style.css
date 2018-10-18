@@ -5,6 +5,17 @@ body {
   text-align: center;
 }
 
+.bg {
+  position: absolute;
+  top: 0px;
+  background-image: url("11.gif");
+  background-repeat: no-repeat;
+  background-position: left;
+  width: 550px;
+  height: 550px;
+  background-size: contain;
+}
+
 #start {
   /* position: absolute;
   top: 20%;
