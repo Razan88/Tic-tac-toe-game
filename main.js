@@ -48,26 +48,14 @@ $(document).ready(function () {
       if (playerArr.includes(wins[j][0]) && playerArr.includes(wins[j][1]) && playerArr.includes(wins[j][2])) {
         // alert(current + " is the winner ");
         swal({
-          // title: "Good job!",
-          // text: current + " is the winner",
-          // icon: "success"
-          position: 'top-end',
           type: 'success',
           title: "congratulation",
-          text: current + " is the winner",
-          showConfirmButton: false,
-          timer: 1500
+          text: current + " is the winner"
         });
         isGameOver = true;
       }
     }
-    // var newCounter = 0;
-    // for (var g = 0; g < 9; g++) {
-    //   if ($(".sqr").eq(g).text() !== '') {
-    //     // debugger;
-    //     newCounter++;
-    //   }
-    // }
+
     console.log('newCounter is ', newCounter);
 
 
